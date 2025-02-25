@@ -6,7 +6,7 @@ import Category from "@/components/category";
 import { GameContext, GameContextType } from "@/lib/context/game-context";
 import { cn } from "@/lib/utils";
 
-function Categories() {
+function CategoryList() {
   const { categories } = React.useContext(GameContext) as GameContextType;
 
   return (
@@ -31,4 +31,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default CategoryList;
