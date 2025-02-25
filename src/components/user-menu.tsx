@@ -2,15 +2,7 @@
 
 import { useCookies } from "next-client-cookies";
 import React from "react";
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  CreditCard,
-  LogOut,
-  Sparkles,
-} from "lucide-react";
-
+import { ChevronsUpDown, LogOut, Sparkles } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -64,13 +56,14 @@ function UserMenu() {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <div>
-            <Avatar className="h-8 w-8 rounded-lg">
+          <div className={"flex gap-2 items-center justify-end"}>
+            <Avatar className="h-12 w-12 rounded-full">
               <AvatarImage src={user.avatar} alt={user.name} />
               <AvatarFallback className="rounded-lg">CN</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-semibold">{user.name}</span>
+              <span className="text-xs">{user.username}</span>
             </div>
             <ChevronsUpDown className="ml-auto size-4" />
           </div>

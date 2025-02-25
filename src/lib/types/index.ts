@@ -7,6 +7,7 @@ export type GameType = {
   code: string;
   icon: string;
   categoryIds: number[];
+  id: string;
 };
 
 export type CategoryType = {

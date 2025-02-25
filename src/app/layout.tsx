@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-
+import { CookiesProvider } from "next-client-cookies/server";
+import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <Toaster />
+      <body className={inter.className + " bg-zinc-50 dark:bg-black"}>
+        <CookiesProvider>
+          {children}
+          <Toaster />
+        </CookiesProvider>
       </body>
     </html>
   );
