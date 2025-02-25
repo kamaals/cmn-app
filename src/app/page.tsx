@@ -5,6 +5,7 @@ import Search from "@/components/search";
 import Categories from "@/components/categories";
 import Script from "next/script";
 import ThemeSwitch from "@/components/theme-switch";
+import GameList from "@/components/game-list";
 
 export default function Home() {
   return (
@@ -24,11 +25,7 @@ export default function Home() {
             <h2 className={"text-4xl font-bold ml-8 mb-8 mt-4"}>Games</h2>
             <div id={"game-launch"}></div>
             <div className={"grid grid-cols-3 gap-8"}>
-              <article className={"col-span-2"}>
-                {GAMES.map((g) => (
-                  <Game game={g} key={g.id} />
-                ))}
-              </article>
+              <GameList />
               <aside className={"space-y-4 mr-8"}>
                 <Search />
                 <Categories />

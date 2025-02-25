@@ -29,3 +29,5 @@ export type PlayerLookupType = Record<PlayerUsernameType, PlayerType>;
 export type LoginType = z.infer<typeof loginSchema>;
 
 export type UserType = PlayerType & { username: PlayerUsernameType };
+
+export type CategoryWithGames = CategoryType & { games: Array<GameType> };

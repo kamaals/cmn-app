@@ -1,23 +1,19 @@
+"use client";
 import React from "react";
 import SectionHeaders from "@/components/section-headers";
 import { ChartBarStacked } from "lucide-react";
-import { CATEGORIES } from "@/lib/mock/categories";
-import { GAMES } from "@/lib/mock/games";
 import Category from "@/components/category";
+import { GameContext, GameContextType } from "@/lib/context/game-context";
+import { cn } from "@/lib/utils";
 
 function Categories() {
-  const categories = React.useMemo(() => {
-    return CATEGORIES.map((c) => {
-      const games = GAMES.filter((f) => f.categoryIds.includes(c.id));
-      return { ...c, games };
-    });
-  }, []);
+  const { categories } = React.useContext(GameContext) as GameContextType;
 
   return (
     <div
-      className={
-        "rounded-2xl space-y-2 border border-zinc-200/60 p-6 dark:border-zinc-700/40"
-      }
+      className={cn(
+        "rounded-2xl space-y-2 border border-zinc-200/60 p-6 dark:border-zinc-700/40",
+      )}
     >
       <SectionHeaders title={"Categories"} subtitle={"Filter by Categories."}>
         <ChartBarStacked
