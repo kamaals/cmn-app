@@ -14,6 +14,7 @@ export function LoginForm({
           <RHFLogin />
           <div className="relative hidden bg-muted md:block">
             <img
+              alt={":"}
               src="https://images.unsplash.com/photo-1604028297236-42130c7dcc3a?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Image"
               className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
